@@ -1,0 +1,7 @@
+# Root environment files
+.env
+.env.*
+
+# Frontend local env
+apps/web/.env
+apps/web/.env.*
