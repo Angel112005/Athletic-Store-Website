@@ -51,20 +51,20 @@ function HeroSection() {
             className="font-black uppercase leading-[0.9] tracking-tight mb-8 animate-fade-in-up"
             style={{ opacity: 0, animationDelay: '0.15s', animationFillMode: 'forwards' }}
           >
-            <span className="block text-[clamp(3.5rem,8vw,6.5rem)] text-white">
-              Domina
+            <span className="block text-[clamp(3rem,7vw,5.5rem)] text-white">
+              Tu búsqueda
             </span>
             <span
-              className="block text-[clamp(3.5rem,8vw,6.5rem)]"
+              className="block text-[clamp(3rem,7vw,5.5rem)]"
               style={{
                 WebkitTextStroke: '1.5px rgba(201,168,76,0.6)',
                 color: 'transparent',
               }}
             >
-              cada
+              termina
             </span>
-            <span className="block text-[clamp(3.5rem,8vw,6.5rem)] text-[var(--color-gold)]">
-              cancha.
+            <span className="block text-[clamp(3rem,7vw,5.5rem)] text-[var(--color-gold)]">
+              acá.
             </span>
           </h1>
 
@@ -73,8 +73,8 @@ function HeroSection() {
             className="text-[var(--color-text-muted)] text-base md:text-lg leading-relaxed max-w-md mb-10 animate-fade-in-up"
             style={{ opacity: 0, animationDelay: '0.3s', animationFillMode: 'forwards' }}
           >
-            Calzado deportivo y equipamiento de las marcas más importantes del mundo.
-            Nike, Adidas, Puma, New Balance y más — enviamos a toda la República.
+            Running, fútbol, básquetbol, béisbol o casual — tenemos el calzado y
+            equipamiento que necesitas. Las mejores marcas, enviamos a toda la República.
           </p>
 
           {/* CTAs */}
