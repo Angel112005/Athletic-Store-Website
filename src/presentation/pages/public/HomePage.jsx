@@ -42,17 +42,17 @@ function HeroSection() {
           >
             <div className="w-6 h-px bg-[var(--color-gold)]" />
             <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-[var(--color-gold)]">
-              Nueva temporada 2026
+              Calzado premium · 2026
             </span>
           </div>
 
-          {/* Heading — massive, impactful */}
+          {/* Heading */}
           <h1
             className="font-black uppercase leading-[0.9] tracking-tight mb-8 animate-fade-in-up"
             style={{ opacity: 0, animationDelay: '0.15s', animationFillMode: 'forwards' }}
           >
             <span className="block text-[clamp(3.5rem,8vw,6.5rem)] text-white">
-              Viste
+              Domina
             </span>
             <span
               className="block text-[clamp(3.5rem,8vw,6.5rem)]"
@@ -61,10 +61,10 @@ function HeroSection() {
                 color: 'transparent',
               }}
             >
-              como un
+              cada
             </span>
             <span className="block text-[clamp(3.5rem,8vw,6.5rem)] text-[var(--color-gold)]">
-              ganador.
+              cancha.
             </span>
           </h1>
 
@@ -73,8 +73,8 @@ function HeroSection() {
             className="text-[var(--color-text-muted)] text-base md:text-lg leading-relaxed max-w-md mb-10 animate-fade-in-up"
             style={{ opacity: 0, animationDelay: '0.3s', animationFillMode: 'forwards' }}
           >
-            Equipamiento deportivo premium para atletas que no aceptan compromisos.
-            Diseño, rendimiento y estilo en cada pieza.
+            Calzado deportivo y equipamiento de las marcas más importantes del mundo.
+            Nike, Adidas, Puma, New Balance y más — enviamos a toda la República.
           </p>
 
           {/* CTAs */}
@@ -123,43 +123,49 @@ function HeroSection() {
           className="relative hidden lg:flex items-center justify-center animate-fade-in"
           style={{ opacity: 0, animationDelay: '0.2s', animationFillMode: 'forwards' }}
         >
-          {/* Outer ring */}
-          <div className="absolute w-[440px] h-[440px] rounded-full border border-[var(--color-gold)]/10" />
-          <div className="absolute w-[360px] h-[360px] rounded-full border border-[var(--color-gold)]/15" />
+          {/* Outer decorative rings */}
+          <div className="absolute w-[460px] h-[460px] rounded-full border border-[var(--color-gold)]/8" style={{ animation: 'spinSlow 18s linear infinite' }} />
+          <div className="absolute w-[380px] h-[380px] rounded-full border border-dashed border-[var(--color-gold)]/12" style={{ animation: 'spinSlow 12s linear infinite reverse' }} />
 
-          {/* Center circle with abstract */}
-          <div className="relative w-[300px] h-[300px] rounded-full bg-gradient-to-br from-[var(--color-gold-muted)] to-transparent border border-[var(--color-gold)]/20 flex items-center justify-center">
-            {/* Large letter */}
-            <span
-              className="select-none font-black text-[180px] leading-none"
-              style={{
-                WebkitTextStroke: '1px rgba(201,168,76,0.25)',
-                color: 'transparent',
-              }}
-            >
-              A
-            </span>
+          {/* Product categories showcase */}
+          <div className="relative w-[300px] space-y-3">
+            {[
+              { icon: <SneakerIcon />, label: 'Calzado deportivo', sub: 'Nike · Adidas · Puma · New Balance', delay: '0.35s' },
+              { icon: <SocksIcon />,   label: 'Calcetas premium',  sub: 'Antiderrapante · Compresión · Trail', delay: '0.5s' },
+              { icon: <ShieldIcon />,  label: 'Espinilleras',      sub: 'Ligas · Fútbol · Protección total', delay: '0.65s' },
+              { icon: <GlovesIcon />,  label: 'Guantes portero',   sub: 'Agarre · Amortiguación · Pro', delay: '0.8s' },
+            ].map(({ icon, label, sub, delay }) => (
+              <div
+                key={label}
+                className="flex items-center gap-4 px-5 py-4 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-sm animate-fade-in-up hover:border-[var(--color-gold)]/40 hover:bg-[var(--color-surface-2)] transition-all duration-300 group"
+                style={{ opacity: 0, animationDelay: delay, animationFillMode: 'forwards' }}
+              >
+                <div className="w-10 h-10 shrink-0 flex items-center justify-center text-[var(--color-gold)]/60 group-hover:text-[var(--color-gold)] transition-colors duration-300">
+                  {icon}
+                </div>
+                <div className="min-w-0">
+                  <p className="text-sm font-bold text-white leading-tight">{label}</p>
+                  <p className="text-[10px] text-[var(--color-text-faint)] truncate mt-0.5">{sub}</p>
+                </div>
+                <div className="ml-auto w-1.5 h-1.5 rounded-full bg-[var(--color-gold)]/30 group-hover:bg-[var(--color-gold)] transition-colors duration-300 shrink-0" />
+              </div>
+            ))}
 
-            {/* Gold dot top */}
-            <div
-              className="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-[var(--color-gold)] animate-pulse-gold"
-            />
+            {/* Shipping badge */}
+            <div className="flex items-center justify-center gap-2 pt-1 animate-fade-in" style={{ opacity: 0, animationDelay: '1s', animationFillMode: 'forwards' }}>
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent to-[var(--color-gold)]/20" />
+              <span className="text-[10px] tracking-[0.25em] uppercase text-[var(--color-gold)]/60 font-semibold">
+                Envíos a toda la República
+              </span>
+              <div className="h-px flex-1 bg-gradient-to-l from-transparent to-[var(--color-gold)]/20" />
+            </div>
           </div>
 
-          {/* Floating tags */}
-          <FloatingTag style={{ top: '8%', right: '0%' }} delay="0.7s">
-            <span className="text-[var(--color-gold)] font-black">⚡ Performance</span>
-          </FloatingTag>
-          <FloatingTag style={{ bottom: '18%', left: '-4%' }} delay="0.9s">
-            <span className="text-white font-black">🏆 Premium</span>
-          </FloatingTag>
-          <FloatingTag style={{ top: '50%', right: '-6%' }} delay="1.1s">
-            <span className="text-[var(--color-gold)] font-black">✦ 2026</span>
-          </FloatingTag>
-
-          {/* Corner lines */}
-          <div className="absolute top-0 right-12 w-px h-16 bg-gradient-to-b from-[var(--color-gold)] to-transparent opacity-40" />
-          <div className="absolute bottom-0 left-12 w-px h-16 bg-gradient-to-t from-[var(--color-gold)] to-transparent opacity-40" />
+          {/* Corner accent lines */}
+          <div className="absolute top-4 right-4 w-px h-12 bg-gradient-to-b from-[var(--color-gold)]/40 to-transparent" />
+          <div className="absolute top-4 right-4 h-px w-12 bg-gradient-to-l from-[var(--color-gold)]/40 to-transparent" />
+          <div className="absolute bottom-4 left-4 w-px h-12 bg-gradient-to-t from-[var(--color-gold)]/40 to-transparent" />
+          <div className="absolute bottom-4 left-4 h-px w-12 bg-gradient-to-r from-[var(--color-gold)]/40 to-transparent" />
         </div>
       </div>
 
@@ -180,8 +186,53 @@ function HeroSection() {
           0%, 100% { transform: translateY(0); opacity: 1; }
           60%       { transform: translateY(6px); opacity: 0; }
         }
+        @keyframes spinSlow {
+          from { transform: rotate(0deg); }
+          to   { transform: rotate(360deg); }
+        }
       `}</style>
     </section>
+  )
+}
+
+/* ── Hero category icons ── */
+function SneakerIcon() {
+  return (
+    <svg viewBox="0 0 40 28" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="36" height="26">
+      <path d="M3 20 C3 23 6 24 9 24 L34 24 C37 24 38 22 38 20 C38 18 36 17 34 17 L32 17" />
+      <path d="M9 17 C9 17 11 8 19 6 C25 4 30 6 32 9 C34 11 35 14 35 17" />
+      <path d="M19 6 L21 17" />
+      <path d="M16 9 L24 10.5" />
+      <path d="M16 12 L24 13.5" />
+      <path d="M9 17 L9 24" />
+    </svg>
+  )
+}
+function SocksIcon() {
+  return (
+    <svg viewBox="0 0 32 36" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="28" height="32">
+      <path d="M10 2 L10 20 C10 20 4 22 3 26 C2 30 5 33 9 34 C16 35 22 32 24 28 L26 20 L22 20 L22 2 Z" />
+      <path d="M10 8 L22 8" />
+    </svg>
+  )
+}
+function ShieldIcon() {
+  return (
+    <svg viewBox="0 0 28 34" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="26" height="32">
+      <path d="M14 2 L4 6 L4 16 C4 23 9 29 14 32 C19 29 24 23 24 16 L24 6 Z" />
+      <path d="M10 16 L13 19 L18 13" />
+    </svg>
+  )
+}
+function GlovesIcon() {
+  return (
+    <svg viewBox="0 0 36 34" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="34" height="32">
+      <path d="M8 32 C5 32 3 30 3 27 L3 16 C3 14 4 13 6 13 L6 8 C6 6 7 5 9 5 C11 5 12 6 12 8 L12 13" />
+      <path d="M12 7 C12 5 13 4 15 4 C17 4 18 5 18 7 L18 13" />
+      <path d="M18 6 C18 4 19 3 21 3 C23 3 24 4 24 6 L24 13" />
+      <path d="M24 8 C24 6 25 5 27 5 C29 5 30 7 30 9 L30 18 C30 25 26 30 20 32 L8 32" />
+      <path d="M6 18 L30 18" />
+    </svg>
   )
 }
 
@@ -484,8 +535,11 @@ function TestimonialsSection() {
 
               {/* Author */}
               <div className="flex items-center gap-3">
-                <div className="w-11 h-11 rounded-full overflow-hidden border border-[var(--color-gold)]/20 shrink-0">
-                  <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
+                <div className="w-11 h-11 rounded-full border border-[var(--color-gold)]/20 bg-[var(--color-gold-muted)] flex items-center justify-center shrink-0">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="20" height="20" className="text-[var(--color-gold)]/70">
+                    <circle cx="12" cy="8" r="4" />
+                    <path d="M4 20 C4 16 7.6 13 12 13 C16.4 13 20 16 20 20" />
+                  </svg>
                 </div>
                 <div>
                   <p className="font-semibold text-[var(--color-gold)] text-sm">{t.name}</p>
@@ -631,46 +685,95 @@ const CONTACT_LINKS = [
 
 function ContactSection() {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-24">
-      {/* Header */}
-      <div className="text-center mb-14">
-        <div className="flex items-center justify-center gap-3 mb-4">
-          <div className="w-8 h-px bg-[var(--color-gold)]" />
-          <span className="text-[10px] font-bold tracking-[0.35em] uppercase text-[var(--color-gold)]">
-            Encuéntranos
-          </span>
-          <div className="w-8 h-px bg-[var(--color-gold)]" />
-        </div>
-        <h2 className="text-3xl md:text-5xl font-black uppercase leading-tight mb-4">
-          Contáctanos
-        </h2>
-        <p className="text-[var(--color-text-muted)] text-base max-w-xl mx-auto">
-          Síguenos en redes sociales o escríbenos por correo. Mantente al día con las
-          últimas colecciones y promociones exclusivas.
-        </p>
-      </div>
+    <section className="relative overflow-hidden bg-[var(--color-surface)] border-y border-[var(--color-border)]">
+      {/* Background glow */}
+      <div className="absolute -right-40 top-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[var(--color-gold)]/[0.04] blur-[100px] pointer-events-none" />
 
-      {/* Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {CONTACT_LINKS.map(({ label, handle, sub, href, icon: Icon }) => (
-          <a
-            key={label}
-            href={href}
-            target={href.startsWith('mailto') ? undefined : '_blank'}
-            rel="noopener noreferrer"
-            className="group flex flex-col items-center gap-3 p-8 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-sm hover:border-[var(--color-gold)]/50 hover:-translate-y-1.5 hover:shadow-[0_8px_32px_rgba(201,168,76,0.1)] transition-all duration-300"
-          >
-            <div className="w-14 h-14 flex items-center justify-center border border-[var(--color-border-2)] rounded-sm text-[var(--color-text-muted)] group-hover:border-[var(--color-gold)]/50 group-hover:text-[var(--color-gold)] group-hover:bg-[var(--color-gold-muted)] transition-all duration-300">
-              <Icon />
+      <div className="relative max-w-7xl mx-auto px-6 py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+          {/* ── LEFT: Info ── */}
+          <div>
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-px bg-[var(--color-gold)]" />
+              <span className="text-[10px] font-bold tracking-[0.35em] uppercase text-[var(--color-gold)]">
+                Encuéntranos
+              </span>
             </div>
-            <div className="text-center">
-              <p className="font-semibold text-white text-sm group-hover:text-[var(--color-gold)] transition-colors duration-300">
-                {handle}
-              </p>
-              <p className="text-xs text-[var(--color-text-faint)] mt-0.5">{sub}</p>
+            <h2 className="text-4xl md:text-6xl font-black uppercase leading-[0.9] mb-6">
+              Contáctanos
+            </h2>
+            <p className="text-[var(--color-text-muted)] text-base leading-relaxed mb-8 max-w-md">
+              Síguenos en redes o escríbenos por correo. Respondemos rápido y te ayudamos
+              a encontrar lo que buscas.
+            </p>
+
+            {/* Location + hours */}
+            <div className="space-y-3">
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-sm border border-[var(--color-border-2)] flex items-center justify-center shrink-0 mt-0.5">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="14" height="14" className="text-[var(--color-gold)]">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                    <circle cx="12" cy="9" r="2.5"/>
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-white">Tuxtla Gutiérrez, Chiapas</p>
+                  <p className="text-xs text-[var(--color-text-faint)]">Envíos a toda la República Mexicana 🇲🇽</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-sm border border-[var(--color-border-2)] flex items-center justify-center shrink-0 mt-0.5">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="14" height="14" className="text-[var(--color-gold)]">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-white">Lunes – Sábado</p>
+                  <p className="text-xs text-[var(--color-text-faint)]">9:00 a 19:00 hrs</p>
+                </div>
+              </div>
             </div>
-          </a>
-        ))}
+          </div>
+
+          {/* ── RIGHT: Social cards ── */}
+          <div className="grid grid-cols-2 gap-3">
+            {CONTACT_LINKS.map(({ label, handle, sub, href, icon: Icon, accent }) => (
+              <a
+                key={label}
+                href={href}
+                target={href.startsWith('mailto') ? undefined : '_blank'}
+                rel="noopener noreferrer"
+                className="group relative flex flex-col gap-4 p-6 bg-[var(--color-bg)] border border-[var(--color-border)] rounded-sm overflow-hidden hover:border-[var(--color-gold)]/40 transition-all duration-400"
+              >
+                {/* Gold corner accent on hover */}
+                <div className="absolute top-0 left-0 w-0 h-0.5 bg-[var(--color-gold)] group-hover:w-full transition-all duration-500" />
+
+                {/* Icon */}
+                <div className="w-12 h-12 rounded-sm border border-[var(--color-border-2)] bg-[var(--color-surface)] flex items-center justify-center text-[var(--color-text-muted)] group-hover:text-[var(--color-gold)] group-hover:border-[var(--color-gold)]/40 group-hover:bg-[var(--color-gold-muted)] transition-all duration-300">
+                  <Icon />
+                </div>
+
+                {/* Text */}
+                <div>
+                  <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[var(--color-text-faint)] mb-1">
+                    {label}
+                  </p>
+                  <p className="text-sm font-semibold text-white group-hover:text-[var(--color-gold)] transition-colors duration-300 leading-tight">
+                    {handle}
+                  </p>
+                  <p className="text-[11px] text-[var(--color-text-faint)] mt-0.5">{sub}</p>
+                </div>
+
+                {/* Arrow */}
+                <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <ArrowRight size={14} className="text-[var(--color-gold)]" />
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   )
