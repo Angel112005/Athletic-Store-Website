@@ -1,0 +1,24 @@
+.card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  width: 200px;
+  border-radius: 10px;
+}
+
+.card img {
+  width: 100%;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.new-price {
+  color: red;
+  font-weight: bold;
+}
+
+.price {
+  font-weight: bold;
+}

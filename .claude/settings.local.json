@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:unsplash.com)",
+      "Bash(BASE=\"C:\\\\Users\\\\Angel GMC\\\\Desktop\\\\Personal Projects\\\\Athletic-Store-Website\\\\public\\\\images\")",
+      "Bash(__NEW_LINE_7d4d1a89db5fc2a7__ echo:*)",
+      "Bash(curl -sL \"https://images.unsplash.com/photo-1571008887538-b36bb32f4571?w=1400&h=900&fit=crop&q=85\" -o \"$BASE/hero/athlete-hero.jpg\")",
+      "Bash(curl -sL \"https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=900&h=600&fit=crop&q=80\" -o \"$BASE/features/performance.jpg\")",
+      "Bash(curl -sL \"https://images.unsplash.com/photo-1483721310020-03333e577078?w=900&h=600&fit=crop&q=80\" -o \"$BASE/features/quality.jpg\")",
+      "Bash(__NEW_LINE_4a469c58a144325b__ echo:*)",
+      "Bash(curl -sL \"https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=900&h=600&fit=crop&q=80\" -o \"$BASE/categories/clothing.jpg\")",
+      "Bash(curl -sL \"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=900&h=600&fit=crop&q=80\" -o \"$BASE/categories/footwear.jpg\")",
+      "Bash(curl -sL \"https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=400&fit=crop&q=80\" -o \"$BASE/testimonials/athlete-1.jpg\")",
+      "Bash(curl -sL \"https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&h=400&fit=crop&q=80\" -o \"$BASE/testimonials/athlete-2.jpg\")"
+    ]
+  }
+}

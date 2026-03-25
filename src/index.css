@@ -1,0 +1,224 @@
+/* ============================================================
+   Athletic Store — Design System
+   Tailwind CSS v4 + Custom Theme
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&family=Archivo+Narrow:wght@400;600;700&display=swap');
+@import 'tailwindcss';
+
+/* ============================================================
+   CUSTOM THEME TOKENS
+   ============================================================ */
+@theme {
+  /* --- Fonts --- */
+  --font-sans: 'Archivo', ui-sans-serif, system-ui, sans-serif;
+  --font-narrow: 'Archivo Narrow', 'Archivo', sans-serif;
+
+  /* --- Brand Colors --- */
+  --color-gold:        #C9A84C;
+  --color-gold-light:  #E8C96A;
+  --color-gold-dark:   #A07838;
+  --color-gold-muted:  rgba(201, 168, 76, 0.15);
+
+  /* --- Background layers --- */
+  --color-bg:          #080808;
+  --color-surface:     #111111;
+  --color-surface-2:   #181818;
+  --color-surface-3:   #222222;
+
+  /* --- Borders --- */
+  --color-border:      rgba(255, 255, 255, 0.07);
+  --color-border-2:    rgba(255, 255, 255, 0.12);
+
+  /* --- Text --- */
+  --color-text:        #ffffff;
+  --color-text-muted:  rgba(255, 255, 255, 0.5);
+  --color-text-faint:  rgba(255, 255, 255, 0.25);
+
+  /* --- Status --- */
+  --color-success:     #22c55e;
+  --color-error:       #ef4444;
+  --color-warning:     #f59e0b;
+}
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+  }
+
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Scrollbar premium */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-bg);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-surface-3);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gold-dark);
+  }
+
+  /* Selection */
+  ::selection {
+    background: rgba(201, 168, 76, 0.3);
+    color: #ffffff;
+  }
+
+  /* Links */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* Inputs reset */
+  input, textarea, select, button {
+    font-family: inherit;
+  }
+
+  /* Images */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+/* ============================================================
+   UTILITIES & COMPONENTS
+   ============================================================ */
+@layer components {
+  /* Gold gradient text */
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #C9A84C 0%, #E8C96A 50%, #C9A84C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Gold shimmer animation */
+  .gold-shimmer {
+    background: linear-gradient(
+      90deg,
+      var(--color-gold-dark) 0%,
+      var(--color-gold-light) 50%,
+      var(--color-gold-dark) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  /* Premium border */
+  .border-gold-gradient {
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+  }
+  .border-gold-gradient::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, var(--color-gold), transparent, var(--color-gold));
+    z-index: -1;
+  }
+
+  /* Glass card */
+  .glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--color-border);
+  }
+
+  /* Hover lift */
+  .hover-lift {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Focus ring */
+  .focus-ring:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+  }
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.4); }
+  50%       { box-shadow: 0 0 0 8px rgba(201, 168, 76, 0); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.animate-pulse-gold {
+  animation: pulse-gold 2s ease infinite;
+}
+
+/* ============================================================
+   PAGE TRANSITIONS
+   ============================================================ */
+.page-enter {
+  animation: fadeInUp 0.4s ease forwards;
+}
